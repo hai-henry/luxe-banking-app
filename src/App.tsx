@@ -11,6 +11,7 @@ function App() {
       <div className="gradient__bg">
         <Navbar />
         <Header />
+        <Info />
       </div>
     </div>
   );
