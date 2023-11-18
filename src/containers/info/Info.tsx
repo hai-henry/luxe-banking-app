@@ -30,8 +30,14 @@ const Info = () => {
               <p>$128,798.60</p>
             </div>
             <div className="info__change">
-              <div className="info__change-dollar"></div>
-              <div className="info__change-percent"></div>
+              <div className="info__change-dollar">
+                <p>Today's Change ($)</p>
+                <p>+596.71</p>
+              </div>
+              <div className="info__change-percent">
+                <p>Today's Change (%)</p>
+                <p>(0.46%) </p>
+              </div>
             </div>
           </div>
         </div>
