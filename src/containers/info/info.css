@@ -33,7 +33,7 @@
   border: 1px solid var(--color-border);
 }
 
-.info__net-worth-graph {
+.info__graph {
   display: flex;
   align-items: flex-start;
   flex: 1 0 0;
@@ -43,7 +43,7 @@
   color: var(--color-text);
 }
 
-.info__net-worth-graph-values {
+.info__graph-values {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,13 +53,13 @@
   align-self: stretch;
 }
 
-.info__net-worth-graph-values p {
+.info__graph-values p {
   color: var(--Silver, #d0d0d0);
   font-family: var(--font-family);
   font-size: 12px;
 }
 
-.info__net-worth-graph-months {
+.info__graph-months {
   display: flex;
   height: 19px;
   padding-right: 4rem;
@@ -68,7 +68,7 @@
   align-self: stretch;
 }
 
-.info__net-worth-graph-months p {
+.info__graph-months p {
   color: var(--Silver, #d0d0d0);
   font-family: var(--font-family);
   font-size: 12px;
