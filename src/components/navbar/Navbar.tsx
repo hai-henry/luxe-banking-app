@@ -24,16 +24,16 @@ const Menu = () => (
 
 const Navbar = () => {
   return (
-    <div className="luxe__navbar">
-      <div className="luxe__navbar-links">
-        <div className="luxe__navbar-logo">
+    <div className="navbar">
+      <div className="navbar__links">
+        <div className="navbar__logo">
           <img src={logo} alt="logo" />
         </div>
-        <div className="luxe__navbar-links_container">
+        <div className="navbar__links-container">
           <Menu />
         </div>
       </div>
-      <div className="luxe__navbar-sign">
+      <div className="navbar__sign">
         <p>Account</p>
       </div>
     </div>

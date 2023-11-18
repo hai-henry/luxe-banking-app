@@ -1,0 +1,75 @@
+.info {
+  display: flex;
+  align-items: center;
+
+  padding: 2rem 0 0 4rem;
+}
+
+.info__content {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info__content-left {
+  display: flex;
+  width: 836px;
+  height: 704px;
+  padding: 1rem 1rem 0 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  background-color: var(--color-bg);
+}
+
+.info__graph-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem;
+
+  border: 1px solid var(--color-border);
+}
+
+.info__net-worth-graph {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  gap: 1.5rem;
+
+  color: var(--color-text);
+}
+
+.info__net-worth-graph-values {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.info__net-worth-graph-values p {
+  color: var(--Silver, #d0d0d0);
+  font-family: var(--font-family);
+  font-size: 12px;
+}
+
+.info__net-worth-graph-months {
+  display: flex;
+  height: 19px;
+  padding-right: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.info__net-worth-graph-months p {
+  color: var(--Silver, #d0d0d0);
+  font-family: var(--font-family);
+  font-size: 12px;
+}

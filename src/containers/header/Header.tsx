@@ -3,10 +3,10 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className="luxe__header" id="home">
-      <div className="luxe__header-content">
+    <div className="header" id="home">
+      <div className="header__content">
         <h1>Good Morning, Henry</h1>
-        <div className="luxe__header-buttons">
+        <div className="header__buttons">
           <button type="button">Transfer</button>
           <button type="button">Link</button>
         </div>
