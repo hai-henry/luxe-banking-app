@@ -13,25 +13,34 @@
 
 .info__content-left {
   display: flex;
-  width: 100%
-  height: 100%;
-  padding: 1rem 1rem 0 1rem;
-  flex-direction: row;
+  width: 836px;
+  height: 704px;
+  padding: 0px 20px;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 20px;
 
   background-color: var(--color-bg);
 }
 
 .info__graph-container {
   display: flex;
+  height: 311px;
+  padding: 15px 0px;
+  align-items: flex-start;
+  gap: 20px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.info__graph-container-main {
+  display: flex;
+  width: 528px;
+  padding: 20px 22px;
   flex-direction: column;
   align-items: flex-start;
+  gap: 10px;
   align-self: stretch;
-  width: 528px;
-
-  gap: 1rem;
-  padding: 1.5rem 1.5rem;
 
   border: 1px solid var(--color-border);
 }
@@ -108,7 +117,7 @@
 }
 
 .info__amount {
-    margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .info__amount-value {
