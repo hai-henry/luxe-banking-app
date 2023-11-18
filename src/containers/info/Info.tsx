@@ -22,21 +22,21 @@ const Info = () => {
           </div>
           <div className="info__net-worth-container">
             <div className="info__account">
-              <p>INDIVIDUAL</p>
-              <p>LX74897</p>
+              <p className="info__account-name">INDIVIDUAL</p>
+              <p className="info__account-id">LX74897</p>
             </div>
             <div className="info__amount">
-              <p>Net Worth</p>
-              <p>$128,798.60</p>
+              <p className="info__amount-title">Net Worth</p>
+              <p className="info__amount-value">$128,798.60</p>
             </div>
             <div className="info__change">
               <div className="info__change-dollar">
-                <p>Today's Change ($)</p>
-                <p>+596.71</p>
+                <p className="info__change-dollar-name">Today's Change ($)</p>
+                <p className="info__change-dollar-value">+596.71</p>
               </div>
               <div className="info__change-percent">
-                <p>Today's Change (%)</p>
-                <p>(0.46%) </p>
+                <p className="info__change-percent-name">Today's Change (%)</p>
+                <p className="info__change-percent-value">(0.46%) </p>
               </div>
             </div>
           </div>
