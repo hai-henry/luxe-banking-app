@@ -1,23 +1,15 @@
 .info {
-  display: flex;
-  align-items: center;
-}
-
-.info__content {
-  display: flex;
-  width: 836px;
-  height: 704px;
-  padding: 0px 20px;
-  flex-direction: column;
+  display: inline-flex;
   align-items: flex-start;
   gap: 20px;
+  padding: 0 0 3rem 4rem;
 }
 
-.info_content-left {
+.info__content-left {
   display: flex;
   width: 836px;
   height: 704px;
-  padding: 0px 20px;
+  padding: 0 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
@@ -35,7 +27,7 @@
   align-self: stretch;
 }
 
-.info__graph-container-main {
+.info__graph-container-left {
   display: flex;
   width: 528px;
   padding: 20px 22px;
@@ -56,6 +48,11 @@
   align-self: stretch;
 }
 
+.info__graph img {
+  width: 416px;
+  align-self: stretch;
+}
+
 .info__graph-values {
   display: flex;
   flex-direction: column;
@@ -64,6 +61,10 @@
   align-content: space-between;
   flex: 1 0 0;
   align-self: stretch;
+}
 
+.info__graph-values p {
   color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 12px;
 }
