@@ -6,8 +6,8 @@ const Info = () => {
   return (
     <div className="info">
       <div className="info__content-left">
-        <div className="info__graph-container">
-          <div className="info__graph-container-left">
+        <div className="info__main-container">
+          <div className="info__graph-container">
             <div className="info__graph">
               <img src={networth_graph} alt="Net worth Graph" />
               <div className="info__graph-values">

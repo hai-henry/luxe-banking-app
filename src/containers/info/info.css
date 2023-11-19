@@ -17,7 +17,7 @@
   background-color: var(--color-bg);
 }
 
-.info__graph-container {
+.info__main-container {
   display: flex;
   height: 311px;
   padding: 15px 0px;
@@ -27,7 +27,7 @@
   align-self: stretch;
 }
 
-.info__graph-container-left {
+.info__graph-container {
   display: flex;
   width: 528px;
   padding: 20px 22px;
@@ -64,6 +64,21 @@
 }
 
 .info__graph-values p {
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 12px;
+}
+
+.info__graph-months {
+  display: flex;
+  height: 19px;
+  padding-right: 64px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.info__graph-months p {
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: 12px;
