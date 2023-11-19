@@ -42,8 +42,15 @@ const Info = () => {
           </div>
         </div>
       </div>
-      <div className="info__content_right">
-        <h1>Right side info</h1>
+      <div className="info__content-right">
+        <div className="info__content-transactions">
+          <p className="info__content-transactions-title">
+            LATEST TRANSACTIONS
+          </p>
+          <p className="info__content-transactions-subtitle">
+            Transaction History
+          </p>
+        </div>
       </div>
     </div>
   );
