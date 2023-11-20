@@ -43,13 +43,17 @@ const Info = () => {
         </div>
       </div>
       <div className="info__content-right">
-        <div className="info__content-transactions">
+        <div className="info__content-transactions-label">
           <p className="info__content-transactions-title">
             LATEST TRANSACTIONS
           </p>
           <p className="info__content-transactions-subtitle">
             Transaction History
           </p>
+          <p>-------line here</p>
+        </div>
+        <div className="info__content-transaction-history">
+          <div className="info__content-transaction-item"></div>
         </div>
       </div>
     </div>
