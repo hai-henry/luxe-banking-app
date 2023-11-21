@@ -156,13 +156,13 @@
   align-self: stretch;
 }
 
-.info__change-dollar-name {
+.info__change-name {
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: 12px;
 }
 
-.info__change-dollar-value {
+.info__change-value {
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: 20px;
@@ -176,20 +176,6 @@
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-}
-
-.info__change-percent-name {
-  color: var(--color-text);
-  font-family: var(--font-family);
-  font-size: 12px;
-}
-
-.info__change-percent-value {
-  color: var(--color-text);
-  font-family: var(--font-family);
-  font-size: 20px;
-
-  color: var(--color-gain);
 }
 
 .info__content-right {

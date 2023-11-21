@@ -31,15 +31,32 @@ const Info = () => {
             </div>
             <div className="info__change">
               <div className="info__change-dollar">
-                <p className="info__change-dollar-name">Today's Change ($)</p>
-                <p className="info__change-dollar-value">+596.71</p>
+                <p className="info__change-name">Today's Change ($)</p>
+                <p className="info__change-value">+596.71</p>
               </div>
               <div className="info__change-percent">
-                <p className="info__change-percent-name">Today's Change (%)</p>
-                <p className="info__change-percent-value">(0.46%) </p>
+                <p className="info__change-name">Today's Change (%)</p>
+                <p className="info__change-value">(0.46%) </p>
               </div>
             </div>
           </div>
+        </div>
+        <div className="info__linked-account">
+          <div className="info__linked-account-label">
+            <p className="info__account-label-title">SAVINGS - 6868</p>
+            <p className="info__account-label-id">Personal Savings</p>
+          </div>
+          <div className="info__linked-account-balance">
+            <p className="info__account-balance-value">$25,759.72</p>
+            <p className="info__account-balance-label">Current Balance</p>
+          </div>
+          <div className="info__linked-account-apy">
+            <p className="info__account-balance-value">4.40%</p>
+            <p className="info__account-balance-label">
+              Annual Percentage Yield
+            </p>
+          </div>
+          <button className="info__linked-account-button">Transfer</button>
         </div>
       </div>
       <div className="info__content-right">
