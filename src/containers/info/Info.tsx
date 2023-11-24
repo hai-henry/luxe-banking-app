@@ -33,6 +33,14 @@ const Info = () => {
     balance: '72,127.24',
   };
 
+  const savings_5238 = {
+    type: 'Personal Savings',
+    title: 'SAVINGS',
+    id: 5238,
+    balance: '25,759.72',
+    apy: '4.40',
+  };
+
   return (
     <div className="info">
       <div className="info__content-left">
@@ -71,12 +79,11 @@ const Info = () => {
             </div>
           </div>
         </div>
-        {/* TODO: Improve the styling for adding other accounts, code will get 
-        crowded*/}
         <Account {...savings_6868} />
         <Account {...checking_4578} />
         <Account {...checking_8790} />
         <Account {...investment_4747} />
+        <Account {...savings_5238} />
       </div>
       <div className="info__content-right">
         <div className="info__content-transactions-label">
