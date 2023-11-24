@@ -13,9 +13,10 @@ a {
   color: unset;
   text-decoration: none;
 }
+
 .gradient__bg {
   background: radial-gradient(
-    368.37% 328.46% at -187.08% 259.59%,
+    368.37% 328.46% at -187.08% 219.59%,
     rgba(208, 208, 208, 0.46) 0%,
     #000 100%
   );
