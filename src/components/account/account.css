@@ -65,6 +65,16 @@
   align-self: stretch;
 }
 
+.info__linked-account-apy-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
 .info__linked-account-button {
   width: 80px;
   height: 30px;
