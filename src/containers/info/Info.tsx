@@ -1,8 +1,38 @@
 import React from 'react';
 import networth_graph from '../../assets/networth_graph.png';
 import './info.css';
+import { Account } from '../../components';
 
 const Info = () => {
+  const savings_6868 = {
+    type: 'Personal Savings',
+    title: 'SAVINGS',
+    id: 6868,
+    balance: '25,759.72',
+    apy: '4.40',
+  };
+
+  const checking_4578 = {
+    type: 'Personal Checking',
+    title: 'CHECKING',
+    id: 4578,
+    balance: '12,000.00',
+  };
+
+  const checking_8790 = {
+    type: 'Personal Checking',
+    title: 'CHECKING',
+    id: 8790,
+    balance: '18,911.64',
+  };
+
+  const investment_4747 = {
+    type: 'Individual Investments',
+    title: 'INVESTMENT',
+    id: 4747,
+    balance: '72,127.24',
+  };
+
   return (
     <div className="info">
       <div className="info__content-left">
@@ -43,23 +73,10 @@ const Info = () => {
         </div>
         {/* TODO: Improve the styling for adding other accounts, code will get 
         crowded*/}
-        <div className="info__linked-account">
-          <div className="info__linked-account-label">
-            <p className="info__account-label-title">SAVINGS - 6868</p>
-            <p className="info__account-label-id">Personal Savings</p>
-          </div>
-          <div className="info__linked-account-balance">
-            <p className="info__account-balance-value">$25,759.72</p>
-            <p className="info__account-balance-label">Current Balance</p>
-          </div>
-          <div className="info__linked-account-apy">
-            <p className="info__account-balance-value">4.40%</p>
-            <p className="info__account-balance-label">
-              Annual Percentage Yield
-            </p>
-          </div>
-          <button className="info__linked-account-button">Transfer</button>
-        </div>
+        <Account {...savings_6868} />
+        <Account {...checking_4578} />
+        <Account {...checking_8790} />
+        <Account {...investment_4747} />
       </div>
       <div className="info__content-right">
         <div className="info__content-transactions-label">
