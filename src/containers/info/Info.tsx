@@ -41,8 +41,8 @@ const Info = () => {
             </div>
           </div>
         </div>
-        // TODO: Improve the styling for adding other accounts, code will get
-        crowded
+        {/* TODO: Improve the styling for adding other accounts, code will get 
+        crowded*/}
         <div className="info__linked-account">
           <div className="info__linked-account-label">
             <p className="info__account-label-title">SAVINGS - 6868</p>
