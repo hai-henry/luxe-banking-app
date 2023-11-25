@@ -95,9 +95,7 @@ const Info = () => {
           </p>
           <p>-------line here</p>
         </div>
-        <div className="info__content-transaction-history">
-          <div className="info__content-transaction-item"></div>
-        </div>
+        <div className="info__content-transaction-history"></div>
       </div>
     </div>
   );
