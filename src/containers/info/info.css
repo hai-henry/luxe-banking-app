@@ -190,12 +190,15 @@
   background-color: var(--color-bg);
 }
 
-.info__content-transactions {
+.info__content-transactions-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.25rem;
   align-self: stretch;
+  padding-bottom: 0.938rem;
+
+  border-bottom: 1px solid var(--color-border);
 }
 
 .info__content-transactions-title {
@@ -218,4 +221,5 @@
   align-items: center;
   gap: 0.625rem;
   align-self: stretch;
+  padding-top: 0.625rem;
 }

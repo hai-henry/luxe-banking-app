@@ -109,7 +109,6 @@ const Info = () => {
           <p className="info__content-transactions-subtitle">
             Transaction History
           </p>
-          <p>-------line here</p>
         </div>
         <div className="info__content-transaction-history">
           <TransactionItem {...transaction_01} />
