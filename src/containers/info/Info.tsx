@@ -1,8 +1,7 @@
 import React from 'react';
-import networth_graph from '../../assets/networth_graph.png';
 import './info.css';
-import { Account } from '../../components';
-import { TransactionItem } from '../../components';
+import { Account, TransactionItem } from '../../components';
+import { networthGraph, car, moneyTransfer } from '../../assets';
 
 const Info = () => {
   const savings_6868 = {
@@ -43,7 +42,7 @@ const Info = () => {
   };
 
   const transaction_01 = {
-    logo: 'https://via.placeholder.com/50',
+    logo: car,
     name: 'ONCUE',
     date: '11/04/23',
     amount: '$25.99',
@@ -51,7 +50,7 @@ const Info = () => {
   };
 
   const transaction_02 = {
-    logo: 'https://via.placeholder.com/50',
+    logo: moneyTransfer,
     name: 'ONLINE TRANSF',
     date: '11/04/23',
     amount: '$300.00',
@@ -64,7 +63,7 @@ const Info = () => {
         <div className="info__main-container">
           <div className="info__graph-container">
             <div className="info__graph">
-              <img src={networth_graph} alt="Net worth Graph" />
+              <img src={networthGraph} alt="Net worth Graph" />
               <div className="info__graph-values">
                 <p>$128,000</p>
                 <p>$100,000</p>
