@@ -113,6 +113,7 @@ const Info = () => {
         <div className="info__content-transaction-history">
           <TransactionItem {...transaction_01} />
           <TransactionItem {...transaction_02} />
+          {/* TODO: Transaction items continue here */}
         </div>
       </div>
     </div>
