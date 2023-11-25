@@ -20,10 +20,13 @@ const TransactionItem: React.FC<TransactionProps> = ({
 
   return (
     <div className="info__content-transaction-item">
-      <img src={logo} alt={name} />
-      <p>
-        {name} - {date}
-      </p>
+      <div className="info__content-transaction-item">
+        <img src={logo} alt={name} />
+        <p>
+          {name} - {date}
+        </p>
+      </div>
+
       <p className={`${transactionItemClass}`}>{amount}</p>
     </div>
   );

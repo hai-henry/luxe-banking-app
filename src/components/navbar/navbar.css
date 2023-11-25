@@ -17,8 +17,8 @@
 }
 
 .navbar__logo img {
-  width: 88px;
-  height: 53px;
+  width: 5.5rem;
+  height: 3.313rem;
 }
 
 .navbar__links-container {
@@ -43,9 +43,9 @@
 
 .navbar__links-container p {
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .navbar__sign p {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
