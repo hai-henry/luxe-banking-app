@@ -2,6 +2,7 @@ import React from 'react';
 import networth_graph from '../../assets/networth_graph.png';
 import './info.css';
 import { Account } from '../../components';
+import { TransactionItem } from '../../components';
 
 const Info = () => {
   const savings_6868 = {
@@ -39,6 +40,22 @@ const Info = () => {
     id: 5238,
     balance: '25,759.72',
     apy: '4.40',
+  };
+
+  const transaction_01 = {
+    logo: 'https://via.placeholder.com/50',
+    name: 'ONCUE',
+    date: '11/04/23',
+    amount: '$25.99',
+    isLiability: true,
+  };
+
+  const transaction_02 = {
+    logo: 'https://via.placeholder.com/50',
+    name: 'ONLINE TRANSF',
+    date: '11/04/23',
+    amount: '$300.00',
+    isLiability: false,
   };
 
   return (
@@ -95,7 +112,10 @@ const Info = () => {
           </p>
           <p>-------line here</p>
         </div>
-        <div className="info__content-transaction-history"></div>
+        <div className="info__content-transaction-history">
+          <TransactionItem {...transaction_01} />
+          <TransactionItem {...transaction_02} />
+        </div>
       </div>
     </div>
   );

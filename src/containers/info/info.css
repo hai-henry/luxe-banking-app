@@ -209,3 +209,13 @@
   font-family: var(--font-family);
   font-size: 12px;
 }
+
+.info__content-transaction-history {
+  display: flex;
+  padding: 0px 12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}

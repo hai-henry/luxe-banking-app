@@ -1,0 +1,26 @@
+.info__content-transaction-item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.info__content-transaction-item img {
+  width: 22px;
+  height: 22px;
+}
+
+.info__content-transaction-item p {
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 12px;
+}
+
+.info__content-transaction-item .liability {
+  color: var(--color-text);
+}
+
+.info__content-transaction-item .income {
+  color: var(--color-gain);
+}

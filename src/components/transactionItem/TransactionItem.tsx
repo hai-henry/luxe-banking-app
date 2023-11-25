@@ -1,28 +1,32 @@
 import React from 'react';
-import './transaction.css';
+import './transactionItem.css';
 
 type TransactionProps = {
   logo: string;
   name: string;
   date: string;
   amount: string;
+  isLiability?: boolean;
 };
 
-const Transaction: React.FC<TransactionProps> = ({
+const TransactionItem: React.FC<TransactionProps> = ({
   logo,
   name,
   date,
   amount,
+  isLiability = false,
 }) => {
+  const transactionItemClass = isLiability ? 'liability' : 'income';
+
   return (
     <div className="info__content-transaction-item">
       <img src={logo} alt={name} />
       <p>
         {name} - {date}
       </p>
-      <p>{amount}</p>
+      <p className={`${transactionItemClass}`}>{amount}</p>
     </div>
   );
 };
 
-export default Transaction;
+export default TransactionItem;
