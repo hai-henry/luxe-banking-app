@@ -1,5 +1,19 @@
 {
   "singleQuote": true,
   "semi": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ["frontend/**/*", "frontend/**/*"],
+      "options": {
+        "semi": false
+      }
+    },
+    {
+      "files": ["backend/**/*", "backend/**/*"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }

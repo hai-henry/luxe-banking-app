@@ -36,4 +36,24 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      files: [
+        'frontend/**/*.js',
+        'frontend/**/*.jsx',
+        'frontend/**/*.ts',
+        'frontend/**/*.tsx',
+      ],
+      rules: {},
+    },
+    {
+      files: [
+        'backend/**/*.js',
+        'backend/**/*.jsx',
+        'backend/**/*.ts',
+        'backend/**/*.tsx',
+      ],
+      rules: {},
+    },
+  ],
 };

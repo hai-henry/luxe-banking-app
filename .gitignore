@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Styling
+.prettierrc
+.eslintrc.cjs
