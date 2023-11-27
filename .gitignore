@@ -7,7 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependency directories
 node_modules
+jspm_packages
 dist
 dist-ssr
 *.local
@@ -26,3 +28,10 @@ dist-ssr
 # Styling
 .prettierrc
 .eslintrc.cjs
+
+# docker-compose
+docker-compose.local*.yml
+
+*.iml
+.env
+.idea
