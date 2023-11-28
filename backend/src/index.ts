@@ -1,22 +1,17 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const {
-  Configuration,
-  PlaidApi,
-  Products,
-  PlaidEnvironments,
-} = require("plaid");
-
-const util = require("util");
-const { v4: uuidv4 } = require("uuid");
-const express = require("express");
-const bodyParser = require("body-parser");
-const moment = require("moment");
-const cors = require("cors");
+import { Configuration, PlaidApi, PlaidEnvironments, Products } from "plaid";
+import util from "util";
+import { v4 as uuidv4 } from "uuid";
+import express, { Request, Response } from "express";
+import bodyParser from "body-parser";
+import moment from "moment";
+import cors from "cors";
 
 const APP_PORT = process.env.APP_PORT || 8000;
-const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
-const PLAID_SECRET = process.env.PLAID_SECRET;
+const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID || "";
+const PLAID_SECRET = process.env.PLAID_SECRET || "";
 const PLAID_ENV = process.env.PLAID_ENV || "sandbox";
 
 const PLAID_PRODUCTS = (
@@ -40,6 +35,10 @@ const client = new PlaidApi(configuration); // Create instance of Plaid API with
 const app = express(); // Create instance of Express application
 app.use(bodyParser.json()); // Interpret JSON data sent to the server
 app.use(cors()); // Allow cross-origin resource sharing (CORS)
+
+app.post("/helloworld", (req: Request, res: Response) => {
+  res.json({ message: "Hello, World!" });
+});
 
 const server = app.listen(APP_PORT, () => {
   console.log(`Server is running on port ${APP_PORT}`);
