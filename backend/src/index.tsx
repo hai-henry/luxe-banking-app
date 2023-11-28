@@ -1,14 +1,13 @@
-"use strict";
-// TODO: Add Plaid API
-require("dotenv").config;
+import dotenv from "dotenv";
+dotenv.config();
 
-const { Configuration, PlaidApi, PlaidEnvironments } = require("plaid");
-const util = require("util");
-const { v4: uuidv4 } = require("uuid");
-const express = require("express");
-const bodyParser = require("body-parser");
-const moment = require("moment");
-const cors = require("cors");
+import { Configuration, PlaidApi, PlaidEnvironments } from "plaid";
+import util from "util";
+import { v4 as uuidv4 } from "uuid";
+import express from "express";
+import bodyParser from "body-parser";
+import moment from "moment";
+import cors from "cors";
 
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
