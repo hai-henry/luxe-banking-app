@@ -36,5 +36,5 @@ docker-compose.local*.yml
 .env
 .idea
 
-#dist
+# Ignore dist folder
 dist/
