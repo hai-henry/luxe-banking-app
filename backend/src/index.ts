@@ -1,7 +1,15 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { Configuration, PlaidApi, PlaidEnvironments, Products } from "plaid";
+import {
+  Configuration,
+  PlaidApi,
+  PlaidEnvironments,
+  Products,
+  // User,
+  CountryCode,
+  LinkTokenCreateRequest,
+} from "plaid";
 import util from "util";
 import { v4 as uuidv4 } from "uuid";
 import express, { Request, Response } from "express";
@@ -20,6 +28,7 @@ const PLAID_PRODUCTS = (
 const PLAID_COUNTRY_CODES = (process.env.PLAID_COUNTRY_CODES || "US").split(
   ",",
 );
+const PLAID_REDIRECT_URI = process.env.PLAID_REDIRECT_URI || "";
 
 const configuration = new Configuration({
   basePath: PlaidEnvironments.sandbox,
@@ -39,6 +48,36 @@ app.use(cors()); // Allow cross-origin resource sharing (CORS)
 app.post("/helloworld", (req: Request, res: Response) => {
   res.json({ message: "Hello, World!" });
 });
+
+app.post(
+  "/api/create_link_token",
+  async function (req: Request, res: Response) {
+    try {
+      // Get the client_user_id by searching for the current user
+      // const user: User = await User.find(...); // Replace '...' with your query logic
+      // const clientUserId: string = user.id;
+
+      const createTokenRequest: LinkTokenCreateRequest = {
+        user: {
+          client_user_id: "user-id",
+        },
+        client_name: "Luxe Banking App",
+        products: PLAID_PRODUCTS as Products[],
+        language: "en",
+        redirect_uri: PLAID_REDIRECT_URI,
+        country_codes: PLAID_COUNTRY_CODES as CountryCode[],
+      };
+
+      const createTokenResponse = await client.linkTokenCreate(
+        createTokenRequest,
+      );
+      res.json(createTokenResponse.data);
+    } catch (error) {
+      // Handle error appropriately
+      res.status(500).send(error);
+    }
+  },
+);
 
 const server = app.listen(APP_PORT, () => {
   console.log(`Server is running on port ${APP_PORT}`);

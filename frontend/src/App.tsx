@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
 import { Header, Info } from './containers'
 import { Navbar } from './components'
 import './App.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:8000/'
+axios.defaults.baseURL = 'http://localhost:8000/' // Base for HTTP Request
 
 function App() {
   // TODO: Link backend to frontend

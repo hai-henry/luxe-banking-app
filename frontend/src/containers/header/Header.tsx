@@ -1,5 +1,5 @@
-import React from 'react';
-import './Header.css';
+import './Header.css'
+import App from '../../App'
 
 const Header = () => {
   return (
@@ -9,10 +9,11 @@ const Header = () => {
         <div className="header__buttons">
           <button type="button">Transfer</button>
           <button type="button">Link</button>
+          <App />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
