@@ -4,7 +4,6 @@
 import React, { useEffect, useState } from 'react'
 import { usePlaidLink } from 'react-plaid-link'
 
-// TODO: Get linking button to show and work
 const App = () => {
   const [linkToken, setLinkToken] = useState(null)
   const generateToken = async () => {

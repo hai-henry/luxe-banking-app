@@ -17,12 +17,15 @@
     "typescript": "^5.3.2"
   },
   "dependencies": {
+    "axios": "^1.6.2",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "moment": "^2.29.4",
     "plaid": "^18.0.0",
+    "pretty-print-json": "^2.0.4",
+    "react-plaid-link": "^3.5.1",
     "util": "^0.12.5",
     "uuid": "^9.0.1"
   }

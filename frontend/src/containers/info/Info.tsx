@@ -1,7 +1,7 @@
-import React from 'react';
-import './info.css';
-import { Account, TransactionItem } from '../../components';
-import { networthGraph, car, moneyTransfer } from '../../assets';
+import React from 'react'
+import './info.css'
+import { Account, TransactionItem } from '../../components'
+import { networthGraph, car, moneyTransfer } from '../../assets'
 
 const Info = () => {
   const savings_6868 = {
@@ -10,28 +10,28 @@ const Info = () => {
     id: 6868,
     balance: '25,759.72',
     apy: '4.40',
-  };
+  }
 
   const checking_4578 = {
     type: 'Personal Checking',
     title: 'CHECKING',
     id: 4578,
     balance: '12,000.00',
-  };
+  }
 
   const checking_8790 = {
     type: 'Personal Checking',
     title: 'CHECKING',
     id: 8790,
     balance: '18,911.64',
-  };
+  }
 
   const investment_4747 = {
     type: 'Individual Investments',
     title: 'INVESTMENT',
     id: 4747,
     balance: '72,127.24',
-  };
+  }
 
   const savings_5238 = {
     type: 'Personal Savings',
@@ -39,7 +39,7 @@ const Info = () => {
     id: 5238,
     balance: '25,759.72',
     apy: '4.40',
-  };
+  }
 
   const transaction_01 = {
     logo: car,
@@ -47,7 +47,7 @@ const Info = () => {
     date: '11/04/23',
     amount: '$25.99',
     isLiability: true,
-  };
+  }
 
   const transaction_02 = {
     logo: moneyTransfer,
@@ -55,7 +55,7 @@ const Info = () => {
     date: '11/04/23',
     amount: '$300.00',
     isLiability: false,
-  };
+  }
 
   return (
     <div className="info">
@@ -113,11 +113,10 @@ const Info = () => {
         <div className="info__content-transaction-history">
           <TransactionItem {...transaction_01} />
           <TransactionItem {...transaction_02} />
-          {/* TODO: Transaction items continue here */}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Info;
+export default Info

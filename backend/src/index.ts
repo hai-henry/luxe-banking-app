@@ -8,7 +8,6 @@ import {
   Products,
   // User,
   CountryCode,
-  LinkTokenCreateRequest,
 } from "plaid";
 import util from "util";
 import { v4 as uuidv4 } from "uuid";
@@ -16,6 +15,7 @@ import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import moment from "moment";
 import cors from "cors";
+import { link } from "fs";
 
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID || "";
@@ -49,32 +49,50 @@ app.post("/helloworld", (req: Request, res: Response) => {
   res.json({ message: "Hello, World!" });
 });
 
+app.post("/api/info", function (request, response, next) {
+  response.json({
+    products: PLAID_PRODUCTS as Products[],
+  });
+});
+
+// TODO: Fix error with requesting to create link token
 app.post(
   "/api/create_link_token",
   async function (req: Request, res: Response) {
+    const requestToken = {
+      user: {
+        client_user_id: "user-id",
+      },
+      client_name: "Luxe Banking",
+      products: ["auth"] as Products[],
+      country_codes: ["US"] as CountryCode[],
+      language: "en",
+      redirect_uri: PLAID_REDIRECT_URI,
+    };
+
+    const createTokenResponse = await client.linkTokenCreate(requestToken);
+    const linkToken = createTokenResponse.data.link_token;
+    res.json({ link_token: linkToken });
+  },
+);
+
+app.post(
+  "/api/exchange_public_token",
+  async function (req: Request, res: Response, next) {
+    const publicToken = req.body.public_token;
     try {
-      // Get the client_user_id by searching for the current user
-      // const user: User = await User.find(...); // Replace '...' with your query logic
-      // const clientUserId: string = user.id;
+      const response = await client.itemPublicTokenExchange({
+        public_token: publicToken,
+      });
 
-      const createTokenRequest: LinkTokenCreateRequest = {
-        user: {
-          client_user_id: "user-id",
-        },
-        client_name: "Luxe Banking App",
-        products: PLAID_PRODUCTS as Products[],
-        language: "en",
-        redirect_uri: PLAID_REDIRECT_URI,
-        country_codes: PLAID_COUNTRY_CODES as CountryCode[],
-      };
+      // These values should be saved to a persistent database and
+      // associated with the currently signed-in user
+      const accessToken = response.data.access_token;
+      const itemID = response.data.item_id;
 
-      const createTokenResponse = await client.linkTokenCreate(
-        createTokenRequest,
-      );
-      res.json(createTokenResponse.data);
+      res.json({ public_token_exchange: "complete" });
     } catch (error) {
-      // Handle error appropriately
-      res.status(500).send(error);
+      // handle error
     }
   },
 );
