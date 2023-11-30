@@ -6,12 +6,11 @@ import {
   PlaidApi,
   PlaidEnvironments,
   Products,
-  // User,
   CountryCode,
 } from "plaid";
 import util from "util";
 import { v4 as uuidv4 } from "uuid";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import bodyParser from "body-parser";
 import moment from "moment";
 import cors from "cors";
@@ -30,6 +29,7 @@ const PLAID_COUNTRY_CODES = (process.env.PLAID_COUNTRY_CODES || "US").split(
 );
 const PLAID_REDIRECT_URI = process.env.PLAID_REDIRECT_URI || "";
 
+// Configure Plaid client
 const configuration = new Configuration({
   basePath: PlaidEnvironments.sandbox,
   baseOptions: {
@@ -45,34 +45,39 @@ const app = express(); // Create instance of Express application
 app.use(bodyParser.json()); // Interpret JSON data sent to the server
 app.use(cors()); // Allow cross-origin resource sharing (CORS)
 
-app.post("/helloworld", (req: Request, res: Response) => {
-  res.json({ message: "Hello, World!" });
-});
+app.post(
+  "/api/info",
+  function (req: Request, res: Response, next: NextFunction) {
+    res.json({
+      products: PLAID_PRODUCTS as Products[],
+    });
+  },
+);
 
-app.post("/api/info", function (request, response, next) {
-  response.json({
-    products: PLAID_PRODUCTS as Products[],
-  });
-});
-
-// TODO: Fix error with requesting to create link token
+// Create a link_token. This link_token is a short lived,
+// one-time use token that authenticates your app with Plaid Link.
 app.post(
   "/api/create_link_token",
-  async function (req: Request, res: Response) {
+  async function (req: Request, res: Response, next: NextFunction) {
+    // Properties to be used by Plaid to generate a link token
     const requestToken = {
       user: {
         client_user_id: "user-id",
       },
       client_name: "Luxe Banking",
-      products: ["auth"] as Products[],
-      country_codes: ["US"] as CountryCode[],
+      products: PLAID_PRODUCTS as Products[],
+      country_codes: PLAID_COUNTRY_CODES as CountryCode[],
       language: "en",
       redirect_uri: PLAID_REDIRECT_URI,
     };
 
-    const createTokenResponse = await client.linkTokenCreate(requestToken);
-    const linkToken = createTokenResponse.data.link_token;
-    res.json({ link_token: linkToken });
+    try {
+      const createTokenResponse = await client.linkTokenCreate(requestToken); // Create link token
+      const linkToken = createTokenResponse.data.link_token; // Extract link token from response
+      res.json({ link_token: linkToken }); // Send link token to client
+    } catch (error) {
+      console.error("Error: ", error);
+    }
   },
 );
 
@@ -92,11 +97,11 @@ app.post(
 
       res.json({ public_token_exchange: "complete" });
     } catch (error) {
-      // handle error
+      console.error("Error: ", error);
     }
   },
 );
 
 const server = app.listen(APP_PORT, () => {
-  console.log(`Server is running on port ${APP_PORT}`);
+  console.log(`Server is running on port: ${APP_PORT}`);
 });

@@ -13,7 +13,7 @@ function App() {
         const response = await axios.post('/api/create_link_token')
         console.log('Response: ', response.data)
       } catch (error) {
-        console.log('Error: ', error)
+        console.error('Error: ', error)
       }
     }
     fetchData()
