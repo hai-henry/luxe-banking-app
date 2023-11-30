@@ -81,6 +81,8 @@ app.post(
   },
 );
 
+// TODO: Initialize link with link token
+
 const server = app.listen(APP_PORT, () => {
   console.log(`Server is running on port: ${APP_PORT}`);
 });
