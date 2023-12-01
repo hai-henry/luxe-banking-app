@@ -16,11 +16,13 @@ import moment from "moment";
 import cors from "cors";
 import { link } from "fs";
 
+// Process environment variables from .env file
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID || "";
 const PLAID_SECRET = process.env.PLAID_SECRET || "";
 const PLAID_ENV = process.env.PLAID_ENV || "sandbox";
 
+// PLAID_PRODUCTS and PLAID_COUNTRY_CODES processed from .env file
 const PLAID_PRODUCTS = (
   process.env.PLAID_PRODUCTS || Products.Transactions
 ).split(",");
@@ -72,9 +74,10 @@ app.post(
     };
 
     try {
-      const createTokenResponse = await client.linkTokenCreate(requestToken); // Create link token
+      // Attempt to create link token by asynchronously request to Plaid API
+      const createTokenResponse = await client.linkTokenCreate(requestToken);
       const linkToken = createTokenResponse.data.link_token; // Extract link token from response
-      res.json({ link_token: linkToken }); // Send link token to client
+      res.json({ link_token: linkToken }); // Temporarily pass link token to client
     } catch (error) {
       console.error("Error: ", error);
     }
