@@ -1,4 +1,5 @@
 import './Header.css'
+import { LinkPlaid, App } from '../../components'
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
         <div className="header__buttons">
           <button type="button">Transfer</button>
           <button type="button">Link</button>
+          <LinkPlaid />
         </div>
       </div>
     </div>
