@@ -1,5 +1,5 @@
 import './Header.css'
-import { LinkPlaid, App } from '../../components'
+import { LinkPlaid } from '../../components'
 
 const Header = () => {
   return (
