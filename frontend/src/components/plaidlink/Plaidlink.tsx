@@ -1,31 +1,30 @@
-import React, { useCallback, useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useCallback, useState } from 'react'
 
-import { usePlaidLink, PlaidLinkOnSuccess } from 'react-plaid-link'
+import {
+  usePlaidLink,
+  PlaidLinkOnSuccess,
+  PlaidLinkOnSuccessMetadata,
+} from 'react-plaid-link'
 
-const LinkPlaid = () => {
-  const [token, setToken] = useState<string | null>(null)
+const SimplePlaidLink = () => {
+  const [linkToken, setLinkToken] = useState<string | undefined>()
+  const [publicToken, setPublicToken] = useState<string | undefined>()
 
-  // get link_token from your server when component mounts
-  React.useEffect(() => {
-    const createLinkToken = async () => {
-      const response = await fetch('/api/create_link_token', { method: 'POST' })
-      const { link_token } = await response.json()
-      setToken(link_token)
+  useEffect(() => {
+    async function fetchLinkToken() {
+      const response = await axios.post('/api/create_link_token')
+      setLinkToken(response.data.link_token)
     }
-    createLinkToken()
-  }, [])
-
-  const onSuccess = useCallback<PlaidLinkOnSuccess>((publicToken, metadata) => {
-    // send public_token to your server
-    // https://plaid.com/docs/api/tokens/#token-exchange-flow
-    console.log(publicToken, metadata)
+    fetchLinkToken()
   }, [])
 
   const { open, ready } = usePlaidLink({
-    token,
-    onSuccess,
-    // onEvent
-    // onExit
+    token: linkToken!,
+    onSuccess: (publicToken, metadata) => {
+      setPublicToken(publicToken)
+      console.log('public_token: ', publicToken, metadata)
+    },
   })
 
   return (
@@ -35,4 +34,4 @@ const LinkPlaid = () => {
   )
 }
 
-export default LinkPlaid
+export default SimplePlaidLink
