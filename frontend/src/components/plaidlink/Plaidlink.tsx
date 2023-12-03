@@ -29,7 +29,7 @@ const SimplePlaidLink = () => {
 
   return (
     <button onClick={() => open()} disabled={!ready}>
-      Connect a bank account
+      Link
     </button>
   )
 }

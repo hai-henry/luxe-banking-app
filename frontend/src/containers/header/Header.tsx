@@ -9,7 +9,6 @@ const Header = () => {
         <h1>Good Morning, Henry</h1>
         <div className="header__buttons">
           <button type="button">Transfer</button>
-          <button type="button">Link</button>
           <LinkPlaid />
         </div>
       </div>
