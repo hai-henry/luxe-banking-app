@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Header, Info } from './containers'
 import { Navbar } from './components'
 import './App.css'
