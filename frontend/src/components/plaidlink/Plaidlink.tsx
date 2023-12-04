@@ -6,6 +6,19 @@ import {
 } from 'react-plaid-link'
 import axios from 'axios'
 
+function GetAccessToken({ publicToken }: { publicToken: string }) {
+  useEffect(() => {
+    async function fetchAccessToken() {
+      const response = await axios.post('/api/exchange_public_token', {
+        public_Token: publicToken,
+      })
+      console.log(response.data)
+    }
+    fetchAccessToken()
+  }, [])
+  return <span>Public Token: {publicToken}</span>
+}
+
 const SimplePlaidLink = () => {
   const [linkToken, setLinkToken] = useState<string | undefined>()
   const [publicToken, setPublicToken] = useState<string | undefined>()
@@ -26,7 +39,9 @@ const SimplePlaidLink = () => {
     },
   })
 
-  return (
+  return publicToken ? (
+    <GetAccessToken publicToken={publicToken} />
+  ) : (
     <button onClick={() => open()} disabled={!ready}>
       Link
     </button>
