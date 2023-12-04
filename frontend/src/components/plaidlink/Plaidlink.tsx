@@ -6,6 +6,7 @@ import {
 } from 'react-plaid-link'
 import axios from 'axios'
 
+// FIXME: Access Token is not being returned
 function GetAccessToken({ publicToken }: { publicToken: string }) {
   useEffect(() => {
     async function fetchAccessToken() {
@@ -33,9 +34,9 @@ const SimplePlaidLink = () => {
 
   const { open, ready } = usePlaidLink({
     token: linkToken!,
-    onSuccess: (publicToken, metadata) => {
-      setPublicToken(publicToken)
-      console.log('public_token: ', publicToken, metadata)
+    onSuccess: (public_Token, metadata) => {
+      setPublicToken(public_Token)
+      console.log('public_token: ', public_Token, metadata)
     },
   })
 
