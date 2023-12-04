@@ -1,11 +1,10 @@
-import axios from 'axios'
 import React, { useEffect, useCallback, useState } from 'react'
-
 import {
   usePlaidLink,
   PlaidLinkOnSuccess,
   PlaidLinkOnSuccessMetadata,
 } from 'react-plaid-link'
+import axios from 'axios'
 
 const SimplePlaidLink = () => {
   const [linkToken, setLinkToken] = useState<string | undefined>()
