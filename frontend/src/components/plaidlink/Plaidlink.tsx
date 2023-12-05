@@ -10,13 +10,18 @@ import axios from 'axios'
 function GetAccessToken({ publicToken }: { publicToken: string }) {
   useEffect(() => {
     async function fetchAccessToken() {
-      const response = await axios.post('/api/exchange_public_token', {
-        public_Token: publicToken,
-      })
-      console.log(response.data)
+      try {
+        const response = await axios.post('/api/exchange_public_token', {
+          public_token: publicToken, // Ensure the property name matches 'public_token'
+        })
+        console.log(response.data)
+      } catch (error) {
+        console.error('Error: ', error)
+      }
     }
     fetchAccessToken()
-  }, [])
+  }, [publicToken])
+
   return <span>Public Token: {publicToken}</span>
 }
 
@@ -34,9 +39,9 @@ const SimplePlaidLink = () => {
 
   const { open, ready } = usePlaidLink({
     token: linkToken!,
-    onSuccess: (public_Token, metadata) => {
-      setPublicToken(public_Token)
-      console.log('public_token: ', public_Token, metadata)
+    onSuccess: (publicToken, metadata) => {
+      setPublicToken(publicToken)
+      console.log('public_token: ', publicToken, metadata)
     },
   })
 
